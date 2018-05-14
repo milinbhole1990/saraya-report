@@ -1,0 +1,286 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<!--<![endif]-->
+	<!-- BEGIN HEAD -->
+	<head>
+	<meta charset="utf-8"/>
+	<title>Saraya Tech. | Utility - File Upload</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<meta content="" name="description"/>
+	<meta content="" name="author"/>
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+	<link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+	<!-- END GLOBAL MANDATORY STYLES -->
+	<!-- BEGIN PAGE LEVEL STYLES -->
+	<link rel="stylesheet" type="text/css" href="assets/global/plugins/select2/select2.css"/>
+	<link rel="stylesheet" type="text/css" href="assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css"/>
+	<link rel="stylesheet" type="text/css" href="assets/global/plugins/bootstrap-datepicker/css/datepicker.css"/>
+	<link rel="stylesheet" type="text/css" href="assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
+	<link href="assets/global/plugins/fancybox/source/jquery.fancybox.css" rel="stylesheet" type="text/css"/>
+	<!-- END PAGE LEVEL STYLES -->
+	<!-- BEGIN THEME STYLES -->
+	<link href="assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+	<link href="assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+	<link id="style_color" href="assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css"/>
+	<link href="assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
+
+	<link href="assets/global/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css" rel="stylesheet"/>
+	<link href="assets/global/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet"/>
+	<link href="assets/global/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet"/>
+	<!-- END THEME STYLES -->
+	<link rel="shortcut icon" href="favicon.ico"/>
+	</head>
+	
+	<body class="page-header-fixed page-quick-sidebar-over-content ">
+	<!-- BEGIN HEADER -->
+	<div class="page-header -i navbar navbar-fixed-top">
+		<!-- BEGIN HEADER INNER -->
+		<div class="page-header-inner">
+			<!-- BEGIN LOGO -->
+			<div class="page-logo">
+				<a href="inclients.html">
+				<img src="assets/admin/layout/img/saraya_logo2.png" style="margin-top: 0px;" alt="logo" class="logo-default"/>
+				</a>
+				<div class="menu-toggler sidebar-toggler hide">
+					<!-- DOC: Remove the above "hide" to enable the sidebar toggler button on header -->
+				</div>
+			</div>
+			<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+			</a>
+			<div class="top-menu">
+				
+			</div>
+		</div>
+		<!-- END HEADER INNER -->
+	</div>
+	<!-- END HEADER -->
+	<div class="clearfix">
+	</div>
+	<!-- BEGIN CONTAINER -->
+	<div class="page-container" ng-app="report-saraya" ng-controller="fileCtrl">
+		<!-- BEGIN SIDEBAR -->
+		<div class="page-sidebar-wrapper">
+			<div class="page-sidebar navbar-collapse collapse">
+				
+				<ul class="page-sidebar-menu" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+					
+					<li class="sidebar-toggler-wrapper">
+						<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+						<div class="sidebar-toggler">
+						</div>
+						<!-- END SIDEBAR TOGGLER BUTTON -->
+					</li>
+					
+					<li class="sidebar-search-wrapper">
+					
+						<form class="sidebar-search " action="extra_search.html" method="POST">
+							<a href="javascript:;" class="remove">
+							<i class="icon-close"></i>
+							</a>
+							
+						</form>
+						<!-- END RESPONSIVE QUICK SEARCH FORM -->
+					</li>
+					<li class="start ">
+						<a href="javascript:;">
+						<i class="icon-home"></i>
+						<span class="title">Chart</span>
+						<span class="arrow "></span>
+						</a>
+						<ul class="sub-menu">
+							<li>
+								<a href="inclients.html">
+								<i class="icon-bar-chart"></i>
+								In Client</a>
+							</li>
+							<li>
+								<a href="outclients.html">
+								<i class="icon-bulb"></i>
+								Out Client</a>
+							</li>
+							<li>
+								<a href="sellcount.html">
+								<i class="icon-graph"></i>
+								Number Of Sales</a>
+							</li>
+						</ul>
+					</li>
+					<li class="active open">
+						<a href="javascript:;">
+						<i class="icon-basket"></i>
+						<span class="title">Utility</span>
+						<span class="selected"></span>
+						<span class="arrow open"></span>
+						</a>
+						<ul class="sub-menu">						
+							<li class="active">
+								<a href="file_upload.html">
+								<i class="icon-pencil"></i>
+								File Upload</a>
+							</li>
+						</ul>
+					</li>
+					</ul>
+				<!-- END SIDEBAR MENU -->
+			</div>
+		</div>
+		<div class="page-content-wrapper">
+			<div class="page-content">
+				
+				<!-- BEGIN STYLE CUSTOMIZER -->
+				<div class="theme-panel hidden-xs hidden-sm">
+					<div class="toggler">
+					</div>
+					<div class="toggler-close">
+					</div>
+					
+				</div>
+				<h3 class="page-title">
+				File Upload <small>in, out and number of sales</small>
+				</h3>
+				<div class="page-bar">
+					<ul class="page-breadcrumb">
+						<li>
+							<i class="fa fa-home"></i>
+							<a href="inclients.html">Home</a>
+							<i class="fa fa-angle-right"></i>
+						</li>
+						<li>
+							<a href="#">file upload</a>
+							<i class="fa fa-angle-right"></i>
+						</li>
+						
+					</ul>
+					
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+
+						<div class="portlet-body form">
+								<!-- BEGIN FORM-->
+								<div class="form-horizontal form-bordered">
+									<div class="form-body">
+									<form id="fileupload" enctype = "multipart/form-data" action="uploadFile" method =  "post">
+										<div class="form-group">
+											<label class="control-label col-md-3">File Type</label>
+											<div class="col-md-4">
+												<select class="form-control input-medium select2me" name="fileType" id="fileType" ng-model="fileType" data-placeholder="Select...">
+													<option value="camera-report">Camera-Report</option>
+													<option value="pos">POS</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="form-group">	
+										<div class="col-md-3">
+										</div>	
+													<div class="col-md-5 fileupload-buttonbar">
+															<span class="btn green fileinput-button">
+															<i class="fa fa-plus"></i>
+															<span>
+															Add files... </span>
+															<input type="file" name="file" multiple="">
+															</span>
+															<button type="submit" class="btn blue start">
+															<i class="fa fa-upload"></i>
+															<span>
+															Start upload </span>
+															</button>
+													</div>
+														
+												
+										</div>
+										</form>
+										</div>
+
+									</div>
+								</div>
+						</div>
+
+					</div>
+				</div>
+				<!-- END PAGE CONTENT-->
+			</div>
+		</div>
+		<!-- END CONTENT -->
+		
+	</div>
+	<!-- END CONTAINER -->
+	<!-- BEGIN FOOTER -->
+	<div class="page-footer">
+		<div class="page-footer-inner">
+			 2018 &copy; Saraya Tech. by CTS.
+		</div>
+		<div class="scroll-to-top">
+			<i class="icon-arrow-up"></i>
+		</div>
+	</div>
+	<!-- END FOOTER -->
+	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+	<!-- BEGIN CORE PLUGINS -->
+	<!--[if lt IE 9]>
+	<script src="assets/global/plugins/respond.min.js"></script>
+	<script src="assets/global/plugins/excanvas.min.js"></script> 
+	<![endif]-->
+	<script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+	<script src="assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+	<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+	<script src="assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+	<script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+	<script src="assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+	<script src="assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+	<script src="assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+	<script src="assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+	<script src="assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+	<!-- END CORE PLUGINS -->
+	<script src="assets/custom/angular.min.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+			var app = angular.module('report-saraya', []);
+			app.controller('fileCtrl',['$scope','$http', function($scope, $http) {
+				
+
+			}]);
+
+	</script>
+	<!-- BEGIN PAGE LEVEL PLUGINS -->
+	<script type="text/javascript" src="assets/global/plugins/select2/select2.min.js"></script>
+	<script type="text/javascript" src="assets/global/plugins/datatables/media/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.js"></script>
+	<script type="text/javascript" src="assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+	<script type="text/javascript" src="assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="assets/global/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js" type="text/javascript"></script>
+	<script src="assets/global/plugins/bootstrap-touchspin/bootstrap.touchspin.js" type="text/javascript"></script>
+	<script type="text/javascript" src="assets/global/plugins/fancybox/source/jquery.fancybox.pack.js"></script>
+	<script src="assets/global/plugins/plupload/js/plupload.full.min.js" type="text/javascript"></script>
+	<!-- END PAGE LEVEL PLUGINS -->
+	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+	<script src="assets/global/scripts/metronic.js" type="text/javascript"></script>
+	<script src="assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+	<script src="assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+	<script src="assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+	<script src="assets/global/scripts/datatable.js"></script>
+	<script src="assets/admin/pages/scripts/ecommerce-products-edit.js"></script>
+	<!-- END PAGE LEVEL SCRIPTS -->
+	<script>
+	        jQuery(document).ready(function() {    
+	           Metronic.init(); // init metronic core components
+	Layout.init(); // init current layout
+	QuickSidebar.init(); // init quick sidebar
+	Demo.init(); // init demo features
+	           EcommerceProductsEdit.init();
+	        });
+	    </script>
+	<!-- END JAVASCRIPTS -->
+	</body>
+	<!-- END BODY -->
+	</html>

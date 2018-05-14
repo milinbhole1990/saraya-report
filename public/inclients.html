@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
+
+<head>
+<meta charset="utf-8"/>
+<title>Saraya Tech. | Chart</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css"/>
+<link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+<link href="assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css"/>
+<link href="assets/global/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css"/>
+<link href="assets/admin/pages/css/tasks.css" rel="stylesheet" type="text/css"/>
+<link href="assets/global/css/components.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="assets/admin/layout/css/layout.css" rel="stylesheet" type="text/css"/>
+<link href="assets/admin/layout/css/themes/darkblue.css" rel="stylesheet" type="text/css" id="style_color"/>
+<link href="assets/admin/layout/css/custom.css" rel="stylesheet" type="text/css"/>
+
+
+<link rel="stylesheet" type="text/css" href="assets/global/plugins/clockface/css/clockface.css"/>
+<link rel="stylesheet" type="text/css" href="assets/global/plugins/bootstrap-datepicker/css/datepicker3.css"/>
+<link rel="stylesheet" type="text/css" href="assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css"/>
+<link rel="stylesheet" type="text/css" href="assets/global/plugins/bootstrap-colorpicker/css/colorpicker.css"/>
+<link rel="stylesheet" type="text/css" href="assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css"/>
+<link rel="stylesheet" type="text/css" href="assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"/>
+<!-- am chart -->
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<link rel="shortcut icon" href="favicon.ico"/>
+</head>
+<body class="page-header-fixed page-quick-sidebar-over-content page-sidebar-closed-hide-logo page-container-bg-solid">
+
+<div class="page-header -i navbar navbar-fixed-top">
+	<div class="page-header-inner">
+		<div class="page-logo">
+			<a href="inclients.html">
+			<img src="assets/admin/layout/img/saraya_logo2.png" style="margin-top: 0px;" alt="logo" class="logo-default"/>
+			</a>
+			<div class="menu-toggler sidebar-toggler hide">
+			</div>
+		</div>
+		
+		<a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse">
+		</a>
+		
+	</div>
+</div>
+<!-- END HEADER -->
+<div class="clearfix">
+</div>
+<!-- BEGIN CONTAINER -->
+<div class="page-container" ng-app="report-saraya" ng-controller="inCtrl">
+	<!-- BEGIN SIDEBAR -->
+	<div class="page-sidebar-wrapper">
+		<div class="page-sidebar navbar-collapse collapse">
+				<ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+				<!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+				<li class="sidebar-toggler-wrapper">
+					<!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+					<div class="sidebar-toggler">
+					</div>
+					<!-- END SIDEBAR TOGGLER BUTTON -->
+				</li>
+				
+				<li class="start active open">
+					<a href="javascript:;">
+					<i class="icon-home"></i>
+					<span class="title">Chart</span>
+					<span class="selected"></span>
+					<span class="arrow open"></span>
+					</a>
+					<ul class="sub-menu">
+						<li class="active">
+							<a href="inclients.html">
+							<i class="icon-bar-chart"></i>
+							In Client</a>
+						</li>
+						<li>
+							<a href="outclients.html">
+							<i class="icon-bulb"></i>
+							Out Client</a>
+						</li>
+						<li>
+							<a href="sellcount.html">
+							<i class="icon-graph"></i>
+							Number Of Sales</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:;">
+					<i class="icon-basket"></i>
+					<span class="title">Utility</span>
+					<span class="arrow "></span>
+					</a>
+					<ul class="sub-menu">						
+						<li>
+							<a href="file_upload.html">
+							<i class="icon-pencil"></i>
+							File Upload</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<!-- END SIDEBAR MENU -->
+		</div>
+	</div>
+	<!-- END SIDEBAR -->
+	<!-- BEGIN CONTENT -->
+	<div class="page-content-wrapper">
+		<div class="page-content">
+			<!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			<div class="modal fade" id="portlet-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+							<h4 class="modal-title">Modal title</h4>
+						</div>
+						<div class="modal-body">
+							 Widget settings form goes here
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn blue">Save changes</button>
+							<button type="button" class="btn default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+					<!-- /.modal-content -->
+				</div>
+				<!-- /.modal-dialog -->
+			</div>
+			<!-- /.modal -->
+			<!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+			
+			<!-- BEGIN PAGE HEADER-->
+			<div class="page-bar">
+				<ul class="page-breadcrumb">
+					<li>
+						<i class="fa fa-home"></i>
+						<a href="inclients.html">Home</a>
+						<i class="fa fa-angle-right"></i>
+					</li>
+					<li>
+						<a href="#">Chart</a>
+					</li>
+				</ul>		
+			</div>
+			<h3 class="page-title">
+			Chart <small>in client details</small>
+			</h3>
+			
+			<!-- BEGIN PAGE CONTENT-->
+			<div class="row">
+				<div class="col-md-12">
+					<!-- BEGIN PORTLET-->
+					<div class="portlet box blue-hoki">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-gift"></i>In Clients Details
+							</div>
+							<div class="tools">
+								<a href="javascript:;" class="collapse">
+								</a>
+								<a href="#portlet-config" data-toggle="modal" class="config">
+								</a>
+								<a href="javascript:;" class="reload">
+								</a>
+								
+							</div>
+						</div>
+						<div class="portlet-body form">
+							<!-- BEGIN FORM-->
+							<div class="form-horizontal form-bordered">
+								<div class="form-body">
+									
+									<div class="form-group">
+										<label class="control-label col-md-3">Date Range</label>
+										<div class="col-md-4">
+											<div class="input-group input-large date-picker input-daterange" data-date="10/11/2012" data-date-format="mm/dd/yyyy">
+												<input type="text" class="form-control" name="from" ng-model="from">
+												<span class="input-group-addon">
+												to </span>
+												<input type="text" class="form-control" name="to" ng-model="to">
+											</div>
+											<!-- /input-group -->
+											<span class="help-block">
+											Select date range </span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-md-3">Store Name</label>
+										<div class="col-md-4">
+											<select class="form-control input-medium select2me" ng-model="store_no" data-placeholder="Select...">
+												<option value="CLASS-R1">CLASS-R1</option>
+												<option value="CLASS-R2">CLASS-R2</option>
+												<option value="CLASS-R3">CLASS-R3</option>
+												<option value="CLASS-R4">CLASS-R4</option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label col-md-3">Chart Type</label>
+										<div class="col-md-4">
+											<select class="form-control input-medium select2me" ng-model="chartType" data-placeholder="Select...">
+												<option value="pie">PIE</option>
+												<option value="bar">BAR</option>
+											</select>
+										</div>
+									</div>
+
+									
+									
+									<div class="form-group last">
+										<label class="control-label col-md-3"></label>
+										<div class="col-md-3">
+											<button type="button" data-toggle="modal" class="btn yellow" ng-click="generateReport()">Generate Graph</button>
+										</div>
+									</div>
+
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+					<div class="chart" ng-show="showBarChart" id="chartdiv" ></div>
+					<div class="pieChart" style=" height: 700px;" ng-show="showPieChart" id="chartdivpie" ></div>
+					<!-- END PORTLET-->
+				</div>
+			</div>
+			<!-- END PAGE CONTENT-->
+		</div>
+	</div>
+</div>
+<!-- END CONTAINER -->
+<!-- BEGIN FOOTER -->
+<div class="page-footer">
+	<div class="page-footer-inner">
+		 2018 &copy; Saraya Tech. by CTS.
+	</div>
+	<div class="scroll-to-top">
+		<i class="icon-arrow-up"></i>
+	</div>
+</div>
+
+<script src="assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jquery-migrate.min.js" type="text/javascript"></script>
+<!-- IMPORTANT! Load jquery-ui.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+<script src="assets/global/plugins/jquery-ui/jquery-ui.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jqvmap/jqvmap/jquery.vmap.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js" type="text/javascript"></script>
+<script src="assets/global/plugins/flot/jquery.flot.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/flot/jquery.flot.resize.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jquery.pulsate.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/bootstrap-daterangepicker/moment.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
+<script type="text/javascript" src="assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="assets/global/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js" type="text/javascript"></script>
+<script src="assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
+<script src="assets/global/scripts/metronic.js" type="text/javascript"></script>
+<script src="assets/admin/layout/scripts/layout.js" type="text/javascript"></script>
+<script src="assets/admin/layout/scripts/quick-sidebar.js" type="text/javascript"></script>
+<script src="assets/admin/layout/scripts/demo.js" type="text/javascript"></script>
+<script src="assets/admin/pages/scripts/index.js" type="text/javascript"></script>
+<script src="assets/admin/pages/scripts/tasks.js" type="text/javascript"></script>
+<script src="assets/admin/pages/scripts/components-pickers.js"></script>
+
+<script type="text/javascript" src="assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script type="text/javascript" src="assets/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js"></script>
+<script type="text/javascript" src="assets/global/plugins/clockface/js/clockface.js"></script>
+<script type="text/javascript" src="assets/global/plugins/bootstrap-daterangepicker/moment.min.js"></script>
+<script type="text/javascript" src="assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+<script type="text/javascript" src="assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script src="assets/admin/pages/scripts/components-dropdowns.js"></script>
+<script src="assets/custom/angular.min.js" type="text/javascript"></script>
+
+
+<!-- amchart -->
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/serial.js"></script>
+<script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+<script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+<script src="assets/custom/js/amcharts.js"></script>
+<script src="assets/custom/js/pie.js"></script>
+<script src="assets/custom/js/responsive.min.js"></script>
+<script src="assets/custom/js/amcharts.js"></script>
+<script src="assets/custom/js/serial.js"></script>
+<script src="assets/custom/js/export.js"></script>
+<script src="assets/custom/js/light.js"></script>
+<script src="assets/custom/js/amChartsDirective.js"></script>
+	
+
+<script type="text/javascript">
+		var app = angular.module('report-saraya', []);
+		app.controller('inCtrl',['$scope','$http', function($scope, $http) {
+			var data={};
+			
+
+			var color=["#FF0F00","#FF6600","#FF9E01","#FCD202","#F8FF01","#B0DE09","#04D215","#0D52D1","#2A0CD0"];
+			$scope.showPieChart=false;
+			$scope.showBarChart=false;
+			$scope.generateReport = function(){
+				//alert("Generate Report");
+				data.from = $scope.from;
+				data.to = $scope.to;
+				data.store_no = $scope.store_no;
+				data.chartType = $scope.chartType;
+				data.reqPara = "inclients";
+
+				console.log(data);
+
+				$http.post("/generateReport",data )
+							.success(function(result) {
+								console.log("success"+result);
+								if("pie" == $scope.chartType){
+									$scope.plotPie(result);
+									$scope.showPieChart=true;
+									$scope.showBarChart=false;
+								} else if ("bar" == $scope.chartType){
+									$scope.plot(result);
+									$scope.showBarChart=true;
+									$scope.showPieChart=false;
+								}
+				});
+
+			};
+
+			$scope.plot = function(result){
+					
+					var obj= {
+					     "type": "serial",
+						  "theme": "light",
+						  "marginRight": 70,
+						  "dataProvider": [],
+						  "valueAxes": [{
+						    "axisAlpha": 0,
+						    "position": "left",
+						    "title": "In Clients"
+						  }],
+						  "startDuration": 1,
+						  "graphs": [{
+						    "balloonText": "<b>[[category]]: [[value]]</b>",
+						    "fillColorsField": "color",
+						    "fillAlphas": 10,
+						    "lineAlpha": 5.2,
+						    "type": "column",
+						    "valueField": "in_clients"
+						  }],
+						  "chartCursor": {
+						    "categoryBalloonEnabled": false,
+						    "cursorAlpha": 0,
+						    "zoomable": false
+						  },
+						  "categoryField": "record_date",
+						  "categoryAxis": {
+						    "gridPosition": "start",
+						    "labelRotation": 45
+						  },
+						  "export": {
+						    "enabled": true
+						  }
+
+					}
+					var j=0;
+					var temp={};
+					for(var i=0;i<result.length;i++){
+						temp.record_date=result[i].record_date;
+						temp.in_clients=result[i].in_clients;
+						if(j==color.length){
+							j=0;
+						}
+						temp.color= color[j];
+						j++;
+						obj.dataProvider.push(temp)
+						temp={}
+					}
+					console.log(obj)
+
+					$scope.chart = AmCharts.makeChart("chartdiv",obj)
+				}
+
+
+			$scope.plotPie = function(result){
+					
+					var obj= {
+					     "type": "pie",
+						  "dataProvider": [],
+						  "titleField": "record_date",
+					      "valueField": "in_clients",
+					      "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+					      "innerRadius": "30%",
+					      "legend": {
+					        "align": "center",
+					        "markerType": "circle"
+					      },
+					      "responsive": {
+					        "enabled": true,
+					        "addDefaultRules": true,
+					        "rules": [
+					          {
+					            "minWidth": 500,
+					            "overrides": {
+					              "innerRadius": "50%",
+					            }
+					          }
+					        ],
+						  "export": {
+						    "enabled": true
+						  }
+					      }
+					}
+					var j=0;
+					var temp={};
+					for(var i=0;i<result.length;i++){
+						temp.record_date=result[i].record_date;
+						temp.in_clients=result[i].in_clients;
+						if(j==color.length){
+							j=0;
+						}
+						temp.color= color[j];
+						j++;
+						obj.dataProvider.push(temp)
+						temp={}
+					}
+					console.log(obj)
+
+					$scope.pieChart = AmCharts.makeChart("chartdivpie",obj)
+				}
+
+
+
+		}]);
+
+</script>
+
+<!-- END PAGE LEVEL SCRIPTS -->
+<script>
+jQuery(document).ready(function() {    
+   Metronic.init(); // init metronic core componets
+   Layout.init(); // init layout
+   QuickSidebar.init(); // init quick sidebar
+Demo.init(); // init demo features
+   Index.init();   
+   Index.initDashboardDaterange();
+   Index.initJQVMAP(); // init index page's custom scripts
+   Index.initCalendar(); // init index page's custom scripts
+   Index.initCharts(); // init index page's custom scripts
+   Index.initChat();
+   Index.initMiniCharts();
+   Tasks.initDashboardWidget();
+   Metronic.init();
+           ComponentsPickers.init();
+});
+</script>
+<!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+</html>
